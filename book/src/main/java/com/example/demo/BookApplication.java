@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
 @RestController
+@SpringBootApplication
 public class BookApplication {
 
 	public static void main(String[] args) {
@@ -21,6 +21,12 @@ public class BookApplication {
 	@RequestMapping(value = "/checked-out")
 	public String checkedOut() {
 		return "Spring Boot in Action";
+	}
+	
+	@RequestMapping(value = "/get-book")
+	public book getBook()
+	{
+		return new book(1,"La peste","Camus");
 	}
 
 }
